@@ -35,11 +35,12 @@ app.get('/cotacao', (req, res) => {
   }
 })
 
-app.listen('3000', err => {
+const porta = process.env.PORT || 8080;
+app.listen(porta, err => {
   if (err) {
     console.log('Erro ao executar servidor')
   } else {
-    console.log('Express running\nhttp://localhost:3000')
+    console.log(`Express running\nhttp://localhost:${porta}`)
   }
 
 })
