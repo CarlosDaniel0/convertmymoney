@@ -9,11 +9,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', async (req, res) => {
-  const data = await current()
-  let dollar
-  for (let i in data.value) {
-    dollar = data.value[i].cotacaoCompra
-  }
+  const dollar = await current()
   res.render('home', { dollar })
 })
 
