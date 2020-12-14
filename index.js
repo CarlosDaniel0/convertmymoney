@@ -10,6 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', async (req, res) => {
   const dollar = await current()
+  console.log(dollar)
   res.render('home', { dollar })
 })
 
